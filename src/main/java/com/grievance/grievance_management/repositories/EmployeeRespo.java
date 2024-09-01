@@ -7,5 +7,7 @@ import com.grievance.grievance_management.entity.Employee;
 
 @Repository
 public interface EmployeeRespo  extends JpaRepository<Employee,Long>{
+
+    Employee findByEmployeeName(String emp);
     
 }

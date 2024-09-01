@@ -1,6 +1,6 @@
 package com.grievance.grievance_management.services;
 
-import org.hibernate.mapping.List;
+import java.util.List; 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -9,13 +9,26 @@ import com.grievance.grievance_management.repositories.EmployeeRespo;
 
 @Service
 public class EmployeeService {
-    @Autowired EmployeeRespo employeeRespo;
 
-    public EmployeeService(){
+    @Autowired
+    private EmployeeRespo employeeRespo;
 
+    public EmployeeService() {
     }
 
-    public List<Employee> getemployee(){
+    public List<Employee> getemployee() {
         return employeeRespo.findAll();
     }
+
+    public Employee saveEmployee(Employee employee){
+        return employeeRespo.save(employee);
+    }
+
+    public Employee getEmpone(String emp) {
+        return employeeRespo.findByEmployeeName(emp);
+    }
+
+
 }
+
+    

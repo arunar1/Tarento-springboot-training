@@ -7,15 +7,14 @@ import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "employee")
-
 public class Employee {
-    
+
     @Id
-    @Column(name = "emp_id")   
+    @Column(name = "emp_id")
     private long id;
 
     @Column(name = "emp_name")
-    private String employee_name;
+    private String employeeName;
 
     public long getId() {
         return id;
@@ -25,14 +24,11 @@ public class Employee {
         this.id = id;
     }
 
-    public String getEmployee_name() {
-        return employee_name;
+    public String getEmployeeName() {
+        return employeeName;
     }
 
-    public void setEmployee_name(String employee_name) {
-        this.employee_name = employee_name;
+    public void setEmployeeName(String employeeName) {
+        this.employeeName = employeeName;
     }
-
-
-    
 }
